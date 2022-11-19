@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "Gerbil";
+  font-style: normal;
+  src: url("./fonts/Gerbil.ttf");
+}
+
+@font-face {
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/Cairo-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/Cairo-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/Cairo-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 900;
+  src: url("./fonts/Cairo-Black.ttf");
+}
+
+body {
+  font-family: "Cairo" !important
+}
+
+.navbar-brand {
+  font-size: 2rem !important;
+  font-family: "Gerbil" !important;
+}
+
+.navbar-collapse {
+  flex-grow: 0 !important
+}
+
+.subbrand {
+  font-size: 1rem;
+  font-family: "Cairo";
+}
+
+.texto {
+  width: 70% !important;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
+
+.volver {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.volver-link{
+  font-size: 2rem;
+}
+
+.texto a {
+  color: #a0a0a0;
+  text-decoration:none;
+}
