@@ -21,7 +21,7 @@ const Createmodal = (props) => {
         setInputs({
           ...inputs,
           [e.target.name]: e.target.value
-        });
+        }, []);
       };
 
       const handleSend = async() => {
@@ -35,7 +35,7 @@ const Createmodal = (props) => {
         precio:"",
         foto:"",
         });
-        window.location.reload(false);
+        props.hide()
       };
 
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { Button } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
@@ -21,8 +21,12 @@ const Formulario = () => {
     precio:"",
     foto:""
   });
-
+  
   const URL = 'https://irradnat-back-production.up.railway.app/';
+  
+  const [, updateState] = React.useState();
+  const forceUpdate = useCallback(() => updateState({}), []);
+
 
   useEffect(() => {
     const getCatalog = async() => {
@@ -30,21 +34,17 @@ const Formulario = () => {
       setCatalog(data.data.catalog);
     }
     getCatalog();
-  }, []);
+  });
   
 
   const hideEditModal = () => {
     return (
-      setShowedit(false),
-      window.location.reload(false)
+      setShowedit(false)
     )
   }
 
-  const hideCreateModal = () => {
-    return (
-      setShowcreate(false),
-      window.location.reload(false)
-    )
+  const hideCreateModal = async() => {
+    setShowcreate(false)
   }
 
   const handleEditModal = e => {
@@ -57,9 +57,9 @@ const Formulario = () => {
     return setShowcreate(true);
   }
   
-  const handleDelete = async(id) => {
-    await axios.delete(`${URL}${id}`);
-    window.location.reload(false);
+  const handleDelete = (id) => {
+    axios.delete(`${URL}${id}`);
+    forceUpdate();
   }
 
   return (
